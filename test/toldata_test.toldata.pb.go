@@ -232,8 +232,8 @@ func CreateTestService_FeedDataToldataServerImpl(ctx context.Context) *TestServi
 	t := &TestService_FeedDataToldataServerImpl{}
 
 	t.Context = ctx
-	t.request = make(chan *FeedDataRequest)
-	t.response = make(chan *FeedDataResponse)
+	t.request = make(chan *FeedDataRequest, 1024)
+	t.response = make(chan *FeedDataResponse, 1024)
 	t.cancel = make(chan struct{})
 	t.eof = make(chan struct{})
 	t.done = make(chan struct{})
@@ -536,8 +536,8 @@ func CreateTestService_StreamDataToldataServerImpl(ctx context.Context) *TestSer
 	t := &TestService_StreamDataToldataServerImpl{}
 
 	t.Context = ctx
-	t.request = make(chan *StreamDataRequest)
-	t.response = make(chan *StreamDataResponse)
+	t.request = make(chan *StreamDataRequest, 1024)
+	t.response = make(chan *StreamDataResponse, 1024)
 	t.cancel = make(chan struct{})
 	t.eof = make(chan struct{})
 	t.done = make(chan struct{})
@@ -807,8 +807,8 @@ func CreateTestService_StreamDataAlt1ToldataServerImpl(ctx context.Context) *Tes
 	t := &TestService_StreamDataAlt1ToldataServerImpl{}
 
 	t.Context = ctx
-	t.request = make(chan *StreamDataRequest)
-	t.response = make(chan *StreamDataResponse)
+	t.request = make(chan *StreamDataRequest, 1024)
+	t.response = make(chan *StreamDataResponse, 1024)
 	t.cancel = make(chan struct{})
 	t.eof = make(chan struct{})
 	t.done = make(chan struct{})
