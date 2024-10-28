@@ -1,4 +1,12 @@
 # Toldata
+
+## Install
+
+```bash
+go install github.com/darmawan01/toldata/cmd/protoc-gen-toldata@latest
+```
+
+
 ## Protobuf for Nats.io
 
 This Go module simplifies how you use protobuf with Nats.io:
